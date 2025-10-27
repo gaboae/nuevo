@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+body {
+      background: linear-gradient(to bottom right, #d9d9d9, #a1a1a1);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Amatic SC', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+
+
+    
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 20px;
+      width: 300px;
+      transition: all 0.3s ease;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('compartir.jpeg'); /* tu imagen */
+      background-size: cover;
+      background-position: center;
+      filter: blur(20px) brightness(0.6);
+      z-index: 0;
+    }
+
+    /* 🔹 Contenido encima del fondo */
+    .card * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover {
+      width: 100%;
+      border-radius: 20px;
+      transition: filter 0.4s ease;
+      filter: grayscale(100%) brightness(0.8);
+    }
+
+    .cover:hover {
+      filter: grayscale(0%) brightness(1);
+    }
+
+    .title {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #000000;
+      font-size: 16px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      outline: none;
+      border-radius: 10px;
+    }
+    @keyframes glow {
+  0% { box-shadow: 0 0 10px rgba(0,255,150,0.3); }
+  50% { box-shadow: 0 0 20px rgba(0,255,150,0.6); }
+  100% { box-shadow: 0 0 10px rgba(0,255,150,0.3); }
+}
+
+.playing {
+  animation: glow 2s infinite;
+}
+
+    
+    
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .card {
+        width: 90%;
+        padding: 15px;
+        border-radius: 20px;
+      }
+
+      .title {
+        font-size: 14px;
+      }
+
+      audio {
+        height: 35px;
+      }
+    }
+
+    /* Pantallas medianas (tablets) */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .card {
+        width: 70%;
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 15px;
+      }
+    }
+
+    /* Pantallas grandes (laptops/PC) */
+    @media (min-width: 769px) {
+      .card {
+        width: 320px;
+      }
+    }
+  
